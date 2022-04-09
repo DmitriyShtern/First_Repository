@@ -25,6 +25,8 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 }
 
+
+
 /* Intro */
 .intro {
     width: 100%;
@@ -55,6 +57,29 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1;
     font-family: 'Pacifico', cursive;
 
+}
+
+/* Input */
+.input {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    position: absolute;
+    top: 300px; 
+    left: 40px;
+    
+}
+#fname {
+    border-radius: 30px;
+    display: block;
+    margin : 0 auto;
+    cursor: pointer;
+    text-indent: 8px;
+    
+}
+
+#fname:focus { 
+    outline: none; 
 }
 
 
@@ -101,11 +126,20 @@ h1, h2, h3, h4, h5, h6 {
 
     transition: color .2s linear;
 
+    cursor: pointer;
+
     
 }
 
 .nav_link:hover {
     color:#22A6F2;
 }
+
+
+
+
+
+
+
 
 
