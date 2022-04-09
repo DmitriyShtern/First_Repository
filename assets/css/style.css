@@ -59,6 +59,26 @@ h1, h2, h3, h4, h5, h6 {
 
 }
 
+/* Text content */
+
+.text_content_inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    position: absolute;
+    top: 250px; 
+    left: 40px;
+}
+
+.text_content {
+    font-size: 40px;
+    font-weight: 700;
+    /* text-transform: uppercase; */
+    text-align: center;
+    line-height: 1;
+    font-family: 'Pacifico', cursive;
+}
+
 /* Input */
 .input {
     width: 100%;
