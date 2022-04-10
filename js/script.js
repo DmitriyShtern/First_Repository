@@ -5,6 +5,7 @@ const nav = document.querySelector('.nav'),
       textNav = document.querySelector('.text_content'),
       navItem = document.querySelectorAll('.nav_link'),
       input = document.querySelector('.input');
+      
 
 
 const wordDatabase = [
@@ -25,9 +26,11 @@ function randomWord(i) {
 }
 
 
-function showInput() {
-    input.classList.remove('hide');
-    input.classList.add('show'); 
+function showAutoFocus() {
+    const autoFocus = document.querySelector('#fname');
+    autoFocus.autofocus = true;
+    return autoFocus.autofocus;
+    // console.dir(autoFocus);
 }
 
 
@@ -40,7 +43,7 @@ nav.addEventListener('click', (event) => {
             if (target == item) {
                 textNav.textContent = randomWord(wordDatabase[i]);
 
-                // showInput();  
+                showAutoFocus();
             }
     });
     
