@@ -8,8 +8,9 @@ const nav = document.querySelector('.nav'),
 
 const wordDatabase = [
     ['Where', 'Why', 'When', 'How', 'Who', 'What'],
-    ['dance', 'do', 'cook', 'sing', 'play', 'read', 'etc'],
-    []
+    ['Dance', 'Do', 'Cook', 'Sing', 'Play', 'Read', 'Etc'],
+    ['I', 'You', 'He', 'she', 'We', 'You', 'They'],
+    ['action', 'activity', 'age', 'air', 'animal', 'area', 'authority', 'bank', 'body', 'book']
 ];
 
 
@@ -23,11 +24,9 @@ function randomWord(i) {
 }
 
 
-const keys = Object.keys( wordDatabase );    // Получаю массив из названия ключей объекта wordDatabase
-
-
 nav.addEventListener('click', (event) => { 
     const target = event.target;
+
     if(target && target.classList.contains('nav_link') ) {
         navItem.forEach((item, i) => {
            
@@ -39,6 +38,15 @@ nav.addEventListener('click', (event) => {
 }});
     
    
+        			  
+        			
+        			
+        			 
+        			 
+        			    
+        			
+        			
+        			
 
 
 
