@@ -3,7 +3,8 @@
 const nav = document.querySelector('.nav'),
       title = document.querySelector('.intro_title'),
       textNav = document.querySelector('.text_content'),
-      navItem = document.querySelectorAll('.nav_link');
+      navItem = document.querySelectorAll('.nav_link'),
+      input = document.querySelector('.input');
 
 
 const wordDatabase = [
@@ -24,6 +25,12 @@ function randomWord(i) {
 }
 
 
+function showInput() {
+    input.classList.remove('hide');
+    input.classList.add('show'); 
+}
+
+
 nav.addEventListener('click', (event) => { 
     const target = event.target;
 
@@ -32,12 +39,14 @@ nav.addEventListener('click', (event) => {
            
             if (target == item) {
                 textNav.textContent = randomWord(wordDatabase[i]);
+
+                // showInput();  
             }
     });
     
 }});
     
-   
+  
         			  
         			
         			
