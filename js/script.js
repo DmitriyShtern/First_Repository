@@ -4,17 +4,26 @@ const nav = document.querySelector('.nav'),
       title = document.querySelector('.intro_title'),
       textNav = document.querySelector('.text_content'),
       navItem = document.querySelectorAll('.nav_link'),
-      input = document.querySelector('.input');
+      wrapperInput = document.querySelector('.input');
+      
+      
       
 
 
-const wordDatabase = [
+const wordEngDatabase = [
     ['Where', 'Why', 'When', 'How', 'Who', 'What'],
-    ['Dance', 'Do', 'Cook', 'Sing', 'Play', 'Read', 'Etc'],
-    ['I', 'You', 'He', 'she', 'We', 'You', 'They'],
+    ['Dance', 'Do', 'Cook', 'Sing', 'Play', 'Read'],
+    ['I', 'You', 'He', 'she', 'We', 'They'],
     ['action', 'activity', 'age', 'air', 'animal', 'area', 'authority', 'bank', 'body', 'book']
 ];
 
+
+const wordRuDatabase = [
+    ['Где', 'Почему', 'Когда', 'Как', 'Кто', 'Что'],
+    ['Танцевать', 'Делать', 'Готовить', 'Петь', 'Играть', 'Читать'],
+    ['я', 'ты', 'он', 'она', 'мы', 'они'],
+    ['действие', 'Мероприятия', 'возраст', 'воздух', 'животное', 'область', 'орган власти', 'банк', 'тело', 'книга']
+];
 
 // Navigator item
 
@@ -28,9 +37,9 @@ function randomWord(i) {
 
 function showAutoFocus() {
     const autoFocus = document.querySelector('#fname');
-    autoFocus.autofocus = true;
+    autoFocus.defaultChecked = true;
+    console.dir(autoFocus);
     return autoFocus.autofocus;
-    // console.dir(autoFocus);
 }
 
 
@@ -41,16 +50,18 @@ nav.addEventListener('click', (event) => {
         navItem.forEach((item, i) => {
            
             if (target == item) {
-                textNav.textContent = randomWord(wordDatabase[i]);
+                textNav.textContent = randomWord(wordEngDatabase[i]);
 
-                showAutoFocus();
+                // showAutoFocus();
+
             }
     });
     
 }});
     
-  
-        			  
+
+
+     // Сделать что бы при нажатии на кнопку глагол появлялся автофокус на поле ввода   			  
         			
         			
         			 
