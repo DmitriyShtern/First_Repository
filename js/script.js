@@ -37,7 +37,7 @@ function randomWord(i) {
 
 function showAutoFocus() {
     const autoFocus = document.querySelector('#fname');
-    autoFocus.defaultChecked = true;
+    autoFocus.autofocus = true;
     console.dir(autoFocus);
     return autoFocus.autofocus;
 }
