@@ -46,7 +46,7 @@ function getDataBase(i) {
     request.addEventListener('load', () => {
         if (request.status === 200) {
             const data = JSON.parse(request.response);
-            textNav.textContent = randomWord(data.english[i]);
+            textNav.textContent = randomWord(data.russian[i]);
         }
     });
 }
