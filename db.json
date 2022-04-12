@@ -1,0 +1,10 @@
+{
+    "database": [
+        ["Where", "Why", "When", "How", "Who", "What"],
+        ["Dance", "Do", "Cook", "Sing", "Pla", "Read"],
+        ["I", "You", "He", "she", "We", "They"],
+        ["action", "activity", "age", "air", "animal", "area", "authority", "bank", "body", "book"],
+        []
+    ]
+
+}
