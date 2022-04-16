@@ -23,6 +23,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     max-width: 90%;
     margin: 0 auto;
+    
 }
 
 
@@ -96,11 +97,29 @@ h1, h2, h3, h4, h5, h6 {
     margin : 0 auto;
     cursor: pointer;
     text-indent: 8px;
+    width: 400px;
     
 }
 
 #fname:focus { 
     outline: none; 
+}
+
+.btn {
+    border-radius: 30px;
+    display: block;
+    margin : 0 auto;
+    cursor: pointer;
+    text-indent: 8px;
+    height: 21px;
+    width: 80px;
+    background-color: white;
+    
+}
+
+.btn:focus {
+    outline: none; 
+
 }
 
 
@@ -182,6 +201,12 @@ h1, h2, h3, h4, h5, h6 {
     padding:0 20px;
     outline:0}
 
+/* ======================== Words */
 
-
-
+.input__words{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 350px;
+    
+}
