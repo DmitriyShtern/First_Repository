@@ -1,11 +1,12 @@
 "use strict";
 
 const nav = document.querySelector('.nav'),
-    title = document.querySelector('.intro_title'),
-    textNav = document.querySelector('.text_content'),
-    navItem = document.querySelectorAll('.nav_link'),
-    wrapperInput = document.querySelector('.input'),
-    autoFocus = document.querySelector('#fname');
+      title = document.querySelector('.intro_title'),
+      textNav = document.querySelector('.text_content'),
+      navItem = document.querySelectorAll('.nav_link'),
+      wrapperInput = document.querySelector('.input'),
+      autoFocus = document.querySelector('#fname'),
+      btn = document.querySelector('.btn');
 
 
 
@@ -36,20 +37,39 @@ function randomWord(i) {
 
 }
 
-function getDataBase(i) {
-    const request = new XMLHttpRequest();
+// function getDataBase(i) {
+//     const request = new XMLHttpRequest();
 
-    request.open('GET', 'db.json');
-    request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-    request.send();
+//     request.open('GET', 'db.json');
+//     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+//     request.send();
 
-    request.addEventListener('load', () => {
-        if (request.status === 200) {
-            const data = JSON.parse(request.response);
-            textNav.textContent = randomWord(data.russian[i]);
-        }
-    });
+//     request.addEventListener('load', () => {
+//         if (request.status === 200) {
+//             const data = JSON.parse(request.response);
+//             textNav.textContent = randomWord(data.requests[i]);
+//         }
+//     });
+// }
+
+async function getDataBase(i) {
+   const request = await fetch('http://localhost:3000/requests')
+
+//    const data = JSON.parse(request.response);
+//    textNav.textContent = randomWord(data.requests[i]);
+
+.then(response => response.json())
+.then(json => randomWord(json[i]))
+.then(json => textNav.textContent = json);
+
+
+// return await response;
+// console.log(json);
+// console.log(request.json());
+// return await request.json();
 }
+// getDataBase();
+// console.log(getDataBase());
 
 nav.addEventListener('click', (event) => {
     const target = event.target;
@@ -68,7 +88,6 @@ nav.addEventListener('click', (event) => {
 
     }
 });
-
 
 
 
