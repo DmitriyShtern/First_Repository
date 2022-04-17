@@ -5,8 +5,9 @@ const nav = document.querySelector('.nav'),
       textNav = document.querySelector('.text_content'),
       navItem = document.querySelectorAll('.nav_link'),
       wrapperInput = document.querySelector('.input'),
-      autoFocus = document.querySelector('#fname'),
-      btn = document.querySelector('.btn');
+      autoFocus = document.querySelectorAll('.fname'),
+      btn = document.querySelector('.btn'),
+      inputWords = document.querySelector('.input__words');
 
 
 
@@ -32,44 +33,21 @@ const nav = document.querySelector('.nav'),
 
 function randomWord(i) {
     const randomIndex = Math.floor(Math.random() * i.length);
-    const randomElement = i[randomIndex]; // Возвращает рандомное слово из вопросов
+    const randomElement = i[randomIndex];                      // Возвращает рандомное слово из массива
     return randomElement;
 
 }
 
-// function getDataBase(i) {
-//     const request = new XMLHttpRequest();
-
-//     request.open('GET', 'db.json');
-//     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-//     request.send();
-
-//     request.addEventListener('load', () => {
-//         if (request.status === 200) {
-//             const data = JSON.parse(request.response);
-//             textNav.textContent = randomWord(data.requests[i]);
-//         }
-//     });
-// }
 
 async function getDataBase(i) {
    const request = await fetch('http://localhost:3000/requests')
 
-//    const data = JSON.parse(request.response);
-//    textNav.textContent = randomWord(data.requests[i]);
-
-.then(response => response.json())
+.then(response => response.json())                                      // Получает из db.json базу слов 
 .then(json => randomWord(json[i]))
-.then(json => textNav.textContent = json);
-
-
-// return await response;
-// console.log(json);
-// console.log(request.json());
-// return await request.json();
+.then(index => textNav.textContent = index);
 }
-// getDataBase();
-// console.log(getDataBase());
+
+
 
 nav.addEventListener('click', (event) => {
     const target = event.target;
@@ -82,12 +60,46 @@ nav.addEventListener('click', (event) => {
 
                 autoFocus.focus();
             }
-
-
         });
-
     }
 });
+
+
+// =========================
+
+
+const sendData = async (url, data) => {
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: data,
+    });
+
+    if(!response.ok) {
+        throw new Error(`Ошибка по адресу ${url}, статус ошибки ${response}`);
+    }
+    return await response.json();
+};
+
+
+
+inputWords.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const formData = new FormData(inputWords);
+        const json = JSON.stringify(Object.fromEntries(formData.entries()));
+
+    sendData('http://localhost:3000/added', json);
+
+    autoFocus.forEach((i => {
+        i.value = '';
+    } ) );
+});
+
+
+
 
 
 

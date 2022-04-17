@@ -91,17 +91,17 @@ h1, h2, h3, h4, h5, h6 {
     
 }
 
-#fname {
+.fname {
     border-radius: 30px;
     display: block;
     margin : 0 auto;
     cursor: pointer;
     text-indent: 8px;
-    width: 400px;
+    width: 300px;
     
 }
 
-#fname:focus { 
+.fname:focus { 
     outline: none; 
 }
 
@@ -207,6 +207,6 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 350px;
+    padding: 0 250px;
     
 }
